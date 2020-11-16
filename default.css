@@ -1,0 +1,232 @@
+@font-face {
+    font-family: ErasBoldITC;
+    src: url(fonts/ErasBoldITC.ttf);
+}
+
+@keyframes gearAnimRight{
+    0%   {transform: rotatez(0deg);}
+    20%  {transform: rotatez(90deg);}
+    25%  {transform: rotatez(90deg);}
+    45%  {transform: rotatez(180deg);}
+    50%  {transform: rotatez(180deg);}
+    70%  {transform: rotatez(270deg);}
+    75%  {transform: rotatez(270deg);}
+    95%  {transform: rotatez(360deg);}
+    100% {transform: rotatez(360deg);}
+}
+
+@keyframes gearAnimLeft{
+    0%   {transform: rotatez(0deg);}
+    20%  {transform: rotatez(-90deg);}
+    25%  {transform: rotatez(-90deg);}
+    45%  {transform: rotatez(-180deg);}
+    50%  {transform: rotatez(-180deg);}
+    70%  {transform: rotatez(-270deg);}
+    75%  {transform: rotatez(-270deg);}
+    95%  {transform: rotatez(-360deg);}
+    100% {transform: rotatez(-360deg);}
+}
+
+header{
+    text-align: center;
+    background: #e0e0e0;
+    padding: 0.5em 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0px 5px 10px  #000000;
+    transition: 0.5s;
+    z-index: 100;
+}
+
+body{
+    background: url("images/background.png") repeat;
+    background-size: 5rem;
+    margin:0 0;
+    font-family: ErasBoldITC;
+    padding-top: 5em;
+}
+
+h1{
+    font-size: 2.5rem;
+    margin: 0 0;
+    color: #1B1464;
+    /* border: solid rgb(30, 46, 117); */
+}
+
+.titlu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container,
+.first-page{
+    margin: 0 auto;
+    width: 98%;
+    max-width: 1920px;
+}
+.nav-list{
+    margin: 0 0;
+    /* border: solid green; */
+    list-style: none;
+    padding: 0 0;
+    display: flex;
+    justify-content: center;
+}
+.nav-list-item{
+    margin: 0 0;
+    padding: 0 .6em;
+    /* border: solid rgb(146, 21, 73); */
+}
+
+.first-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.descriere{
+    font-size: 6rem;
+    text-align: center;
+    color: #e0e0e0;
+    text-shadow: 10px 10px 10px black;
+    /* border: solid gold; */
+}
+
+/*
+==================================
+        IMAGES
+==================================
+*/
+
+.logo{
+    height: 3em;
+    padding-right: .5em;
+    margin: 0.1em 0;
+}
+/*
+==================================
+        ANIMATED GEARS
+==================================
+*/
+.gear{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+}
+
+.gear-img{
+    /* border: solid wheat; */
+    animation-name: gearAnimRight;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    width: 33%;
+    max-width: 200px;
+    /* border: solid gold; */
+}
+.img2{
+    transform: rotateZ(50deg);
+    animation-name: gearAnimLeft;
+}
+
+/*
+==================================
+        SLIDESHOW
+==================================
+*/
+
+.carousel-container{
+    width: 90%;
+    margin: 10em auto;
+    overflow: hidden;
+    border: 1em solid;
+    border-image: url("images/border.png") 30 round;
+    position: relative;
+    
+}
+.carousel-slide{
+    display: flex;
+    width: 100%;
+}
+.slideImg{
+    width: 100%;
+}
+
+#prevBtn{
+    position: absolute;
+    z-index: 20;
+    left: .1%;
+    height: 50%;
+    color: rgb(214, 214, 214);
+    padding: 13.8% 0;
+}
+
+#nextBtn{
+    position: absolute;
+    z-index: 20;
+    right: .1%;
+    height: 50%;
+    color: rgb(214, 214, 214);
+    cursor: pointer;
+    padding: 13.8% 0;
+}
+/*
+==================================
+        NAV LINKS
+==================================
+*/
+.nav-link{
+    /* border: solid red; */
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #1B1464;
+}
+
+.nav-link:hover{
+    color: #5040ff;
+}
+
+.current-page{
+    border-bottom: solid #1B1464;
+}
+
+.current-page:hover{
+    color: #1B1464;
+}
+
+/*
+==================================
+            FOOTER
+==================================
+*/
+
+footer{
+    margin-top: 10em;
+    text-align: center;
+    font-size: 3rem;
+    padding: 1em 0;
+    background: rgb(214, 214, 214);
+    box-shadow: 0 -5px 10px  #000000;
+}
+
+/*
+==================================
+        MEDIA-QUERYS
+==================================
+*/
+
+@media(min-width: 900px){
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .descriere{
+        font-size: 8rem;
+    }
+    .carousel-container{
+        width: 70%;
+    }
+}
